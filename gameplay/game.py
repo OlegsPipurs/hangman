@@ -1,65 +1,51 @@
-print("===============")
-print("Spēle karātavas")
-print("===============")
-dzivibas = 6                                             #Dzivibu sakotnejais daudzums
-minetieburt = []                                         #Mineto Burtu cikls
-minetievardi = []                  #<<<<<<<<<<< new shit mineeto vaardu saraksts......
-vards = ("abols".upper())                                #Minetais vards
-x1 = list(vards.upper())                                 #Maina type uz list, lai salidzinatu pret progresu
-progress = ['-','-','-','-','-']                         #Tiek demonstrets aizklatais vards ar "-" zimem
-#uzminets = False                                #Sakotnejais mineto definejums  - False
-while dzivibas > 0 and x1 != progress:                          #Kamer dzivibas vairak par nulli
-    print(progress)                                             #Izvada progresu
-    user_input =str(input("Ievadiet burtu vai visu vārdu: ").upper())          #Jaievada minetais burts
-    if user_input.isalpha() == True:
-        if list(user_input) == x1:
-                print('Tu atminēji vārdu! Spēle beigusies' + str(x1))
-                exit()
-        else:
-                        minetievardi.append(user_input) 
-                        print('Nepareizs minējums. Mēģini vēlreiz!')
-        if len(user_input) != len(x1):
-                                print("Nepareiza vārda garums")
+class game:
+    def __init__(self, play):
+        self.play = play
+    def play(xxx):
+        minamais_vards = str(xxx.upper())       # Mainiga varda virknes un lielo burtu definejums
+        uzmietie_burti = set()                  
+        neuzminetie_burti = set()
+        neuzminetie_vardi = set()
+        dzivibas = 6
+        win = 0          # Speles karodzina definejums izmantots 1 un 0    
+        print(73*'='+'\nSpēle karātavas. Minamais vārds ir '+str(len(minamais_vards))+' simboli garš. Tev ir sešas dzīvības.\n'+73*'=') # Izvada speles pazinojumu ar ,ima,o vardu garumu + Speles vizualizacija atdalijums ar "=" 
 
-    else:
-            print('Ievadīji nekorektu simbolu')             #Izvada pazinojumu, nekorektu simbolu ievadi
-            continue                                           #Funkcija tiek aptureta un izpildas nakamie nosacijumi
-    minetieburt.append(user_input)                          #Burti tiek parveidoti par lieliem
-    a=user_input                                            #A mainigais lietotaja ievade
-    b=vards[0]                                              #B mainigais pirmajam varda burtam "A"
-    c=vards[1]                                              #C mainigais pirmajam varda burtam "B"
-    d=vards[2]                                              #D mainigais pirmajam varda burtam "0"1
-    e=vards[3]                                              #E mainigais pirmajam varda burtam "L"
-    f=vards[4]                                              #F mainigais pirmajam varda burtam "S"
-    if a==b:                                                #Parbauda pirmo ievadito burtu ar varda pirmo burtu
-            print("Uzmineji burtu")                         #Izvada ja ir pareizs minejums
-            progress[0] = 'A'
-            print(minetieburt)
-    elif a==c:
-            print("Uzmineji burtu")
-            progress[1] = 'B'
-            print(minetieburt)
-    elif a==d:
-            print("Uzmineji burtu")
-            progress[2] = 'O'
-            print(minetieburt)
-    elif a==e:
-            print("Uzmineji burtu")
-            progress[3] = 'L'
-            print(minetieburt)
-    elif a==f:
-            print("uzmineji burtu")
-            progress[4] = 'S'
-            print(minetieburt)
-    else:
-            print("Neuzminēji burtu")
-            dzivibas -= 1
-            print('Atlikušās dzīvības: ' + dzivibas * "\u2764\uFE0F")
-            print(minetieburt) 
-else:
-    if x1 == progress:                                      #pārbaude vai progress un minamais vārdssakrīt
-        print("Tu atminēji vārdu: " + str(x1))                          #ja sakrīt paziņo par uzvaru
-        exit()                                              #iziet no spēles
-    else:
-        print("Spēle beigusies Tu zaudēji, veiksmi nākamajā reizē!")               #GAME OVER!!!
-        exit()                                              #iziet no spēles
+        while dzivibas != 0:                                                    # While cikla sakums definējums dzivibas nav= ar 0
+            burts = input('Ievadi minēto burtu: ').upper()                      # Ievaditais burts tiek parveidots uz lielo burtu
+            if burts.isalpha() == False:                                        # Parbauda vai simbols ir alfabetisks
+                print('Ievadīji nekorektu simbolu')                             # Izvada pazinojumu, nekorektu simbolu ievadi
+            elif burts in minamais_vards and len(burts) == 1:                   # Tiek veikts parbaudijums uz ievadito burtu, vai ir alfabetisks un garums ir vienads ar 1
+                uzmietie_burti.add(burts)                                       # Pievieno sarakstam uzminamie burti
+                neuzminetie_burti.add(burts)                                    # Pievieno sarakstam neminamie burti
+                print(neuzminetie_burti)                                        # Izvada neuzminetos burtus
+                print('Atminētie burti: ', ''.join(burts if burts in uzmietie_burti else '-' for burts in minamais_vards))    # Veic parbaudi par uzmineto burtu minamaja varda, ja tas nav uzminets atstaj "-" 
+                if ''.join(burts if burts in uzmietie_burti else '-' for burts in minamais_vards) == minamais_vards:          # Pārbauda vai vārds ir pa burtiem atminēts tb vai atmaskotais vārds sakrīt ar minamo vārdu
+                    win = 1                                                                                                   # Speles gaita mainas karodzina vērtiba
+                    break
+            elif burts in neuzminetie_burti and len(burts) == 1:                 # Tiek veikta parbaude vai jau tika ievadits sis burts
+                print('Tu jau minēji  šādu burtu, mini vēlreiz')
+            elif len(burts) > 1 and len(burts) != len(minamais_vards):           # Tiek veikta parbaude ievadita simbolu garums ir vienads ar minamo varda garumu    
+                print('Nepareizs vārda garums, mini vēlreiz')
+            elif len(burts) > 1 and len(burts) == len(minamais_vards) and burts != minamais_vards:  #Tiek veikta parbaude minamais vards tika uzminets
+                neuzminetie_vardi.add(burts)
+                print(neuzminetie_vardi)
+                print('Nepareizs vārds, mini vēlreiz!') 
+                dzivibas -= 1                                                    # Nepareiza minejuma gaidjuma atņem dzivibu
+                print('Atlikušās dzīvības: ' + dzivibas * "\u2764\uFE0F")        # Izvada atlikuso dzivu skaitu
+            elif burts == minamais_vards:                                        #Vards tika uzminets pa burtiem, tiek mainits karodzina veriba uz Win "True"
+                win = 1
+                dzivibas = 0
+            #elif pielikts pārbaudei vai enter nespaida cilvēls jo savādāk ņema nost dzīvības
+            elif burts == '':                                                   # Spēlētājs nav ievadījis burtu vai vārdu un nospiedis Enter
+                print('Patīk enter spaidīt?')                                   # Izdrukā paziņojumu, ka spēlētājs nav ievadījis burtu vai visu vārdu
+            else:
+                neuzminetie_burti.add(burts)                                    # Papildina spēlētāja ievadīto burtu neuzminēto burtu sarakstā
+                print(neuzminetie_burti)                                        # Izdrukā neuzminēto burtu sarakstu
+                print('Minētais', burts, 'nav šajā vārdā')                      # Izdrukā paziņojumu, ka spēlētāja ievadītāis burts nav minamajā vārdā
+                dzivibas -= 1                                                   # Atņem vienu dzīvību par nepareizu atbildi
+                #dzivibas_fix = 6 - dzivibas 
+                print('Atlikušās dzīvības: ' + dzivibas * "\u2764\uFE0F")       # Izdrukā paziņojumu ar atlikušo dzīvību skaitu
+        if win == 1:                                                            # Ja spēlēs karodziņa vērtība ir "True"
+                print('Tu atminēji vārdu! Vārds bija: ',minamais_vards)         # Izdrukā paziņojumu par vārda atminēšanu
+        else:
+                print('Tu neatminēji vārdu. Vārds bija: ',minamais_vards)       # Izdrukā paziņojumu par vārda neuzminēšanu
