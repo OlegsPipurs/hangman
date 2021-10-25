@@ -7,6 +7,7 @@ class game:
         neuzminetie_burti = set()
         neuzminetie_vardi = set()
         dzivibas = 6
+        #test komentaars
         win = 0          # Speles karodzina definejums izmantots 1 un 0    
         print(73*'='+'\nSpēle karātavas. Minamais vārds ir '+str(len(minamais_vards))+' simboli garš. Tev ir sešas dzīvības.\n'+73*'=') # Izvada speles pazinojumu ar ,ima,o vardu garumu + Speles vizualizacija atdalijums ar "=" 
 
