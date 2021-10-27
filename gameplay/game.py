@@ -7,7 +7,6 @@ class game:
         neuzminetie_burti = set()
         neuzminetie_vardi = set()
         dzivibas = 6
-        #test komentaars2
         win = 0          # Speles karodzina definejums izmantots 1 un 0    
         print(73*'='+'\nSpēle karātavas. Minamais vārds ir '+str(len(minamais_vards))+' simboli garš. Tev ir sešas dzīvības.\n'+73*'=') # Izvada speles pazinojumu ar ,ima,o vardu garumu + Speles vizualizacija atdalijums ar "=" 
 
@@ -23,10 +22,11 @@ class game:
                 if ''.join(burts if burts in uzmietie_burti else '-' for burts in minamais_vards) == minamais_vards:          # Pārbauda vai vārds ir pa burtiem atminēts tb vai atmaskotais vārds sakrīt ar minamo vārdu
                     win = 1                                                                                                   # Speles gaita mainas karodzina vērtiba
                     break
-            elif burts in neuzminetie_burti and len(burts) == 1:                 # Tiek veikta parbaude vai jau tika ievadits sis burts
-                print('Tu jau minēji  šādu burtu, mini vēlreiz')
             elif len(burts) > 1 and len(burts) != len(minamais_vards):           # Tiek veikta parbaude ievadita simbolu garums ir vienads ar minamo varda garumu    
-                print('Nepareizs vārda garums, mini vēlreiz')
+                if burts == 'IDDQD':                                             # easter egg čīterime atminoties klasiku!!! =] doom ftw \m/
+                    print('  '.join(minamais_vards[::2].upper()))                 #Izvada katru otro burtu !BONUS
+                else:
+                    print('Nepareizs vārda garums, mini vēlreiz')
             elif len(burts) > 1 and len(burts) == len(minamais_vards) and burts != minamais_vards:  #Tiek veikta parbaude minamais vards tika uzminets
                 neuzminetie_vardi.add(burts)
                 print(neuzminetie_vardi)
@@ -36,7 +36,6 @@ class game:
             elif burts == minamais_vards:                                        #Vards tika uzminets pa burtiem, tiek mainits karodzina veriba uz Win "True"
                 win = 1
                 dzivibas = 0
-            #elif pielikts pārbaudei vai enter nespaida cilvēls jo savādāk ņema nost dzīvības
             elif burts == '':                                                   # Spēlētājs nav ievadījis burtu vai vārdu un nospiedis Enter
                 print('Patīk enter spaidīt?')                                   # Izdrukā paziņojumu, ka spēlētājs nav ievadījis burtu vai visu vārdu
             else:
@@ -44,7 +43,6 @@ class game:
                 print(neuzminetie_burti)                                        # Izdrukā neuzminēto burtu sarakstu
                 print('Minētais', burts, 'nav šajā vārdā')                      # Izdrukā paziņojumu, ka spēlētāja ievadītāis burts nav minamajā vārdā
                 dzivibas -= 1                                                   # Atņem vienu dzīvību par nepareizu atbildi
-                #dzivibas_fix = 6 - dzivibas 
                 print('Atlikušās dzīvības: ' + dzivibas * "\u2764\uFE0F")       # Izdrukā paziņojumu ar atlikušo dzīvību skaitu
         if win == 1:                                                            # Ja spēlēs karodziņa vērtība ir "True"
                 print('Tu atminēji vārdu! Vārds bija: ',minamais_vards)         # Izdrukā paziņojumu par vārda atminēšanu
