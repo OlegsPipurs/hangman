@@ -19,7 +19,6 @@ with open('data\words.txt', 'r', encoding='utf-8') as file:     # Atver vārdu f
 
     importetais_vards_hard = [x for x in visi_vardi if len(x) >= 4]      # Parbauda vārda garumu
     importetais_vards_hard_lv_fix = [ x for x in importetais_vards_hard if "Ā" in x or "Č" in x or "Ē" in x or "Ģ" in x or "Ī" in x or "Ķ" in x or "Ļ" in x or "Ņ" in x or "Š" in x or "Ū" in x or "Ž" in x]
-    #list(importetais_vards_hard_lv_fix)
     with open('data\hard_words.txt', 'w') as file_handler:
         for item in importetais_vards_hard_lv_fix:
             file_handler.write("{}\n".format(item))    
