@@ -26,7 +26,7 @@ class game:
                     print('\033[0;32;40m Tu atminēji vārdu! Vārds bija: ',minamais_vards  + '\033[0;37;40m')         # Izdrukā paziņojumu par vārda atminēšanu                                                                                                   # Speles gaita mainas karodzina vērtiba
                     break
             elif len(burts) > 1 and len(burts) != len(minamais_vards):           # Tiek veikta parbaude ievadita simbolu garums ir vienads ar minamo varda garumu    
-                if burts == 'fita':                                              # easter egg čīterime atminoties klasiku!!! =] doom ftw \m/
+                if burts == 'FITA':                                              # easter egg čīterime atminoties klasiku!!! =] doom ftw \m/
                     print('  '.join(minamais_vards[::2].upper()))                # Izvada katru otro burtu !BONUS
                 else:
                     print('\033[0;31;40m Nepareizs vārda garums, mini vēlreiz' + '\033[0;37;40m')

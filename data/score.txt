@@ -23,3 +23,5 @@ e | Speles laiks 0 | Speles limenis temp
 e | Speles laiks 0 | Speles limenis temp
 e | Speles laiks 0 | Speles limenis temp
 e | Speles laiks 0 | Speles limenis temp
+ab213 | Speles laiks 5 | Speles limenis easy
+abse123213 | Speles laiks 25 | Speles limenis medium
