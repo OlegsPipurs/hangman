@@ -20,8 +20,9 @@
     1: easy grūtības pakāpe,
     2: medium grūtības pakāpe,
     3: latvietis grūtības pakāpe,
-    4: aplūkot HIGHSCORES,
-    5: iziet no spēles.
+    4: vārds no randowm words API
+    5. aplūkot HIGHSCORES,
+    6: iziet no spēles.
 
 ###### Jums tiek dotas sešas dzīvības.
 ###### Sāciet minēt vārdu ievadot vai nu burtu vai visu vārdu atbilstoši vārda garuma paziņojumam.

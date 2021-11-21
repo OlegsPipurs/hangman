@@ -29,7 +29,7 @@ nick = input('IEVADI SAVU IESAUKU:')
 while True:
     try:
         while (visi_vardi):
-            difficulty = input('Izvēlies spēles līmeni, 1 = easy,  2 = medium,  3 = latvietis =], 4="nekad neuzminēsi līmenis", 5 = highscore, 6 = iziet!!!:')
+            difficulty = input('Izvēlies spēles līmeni, 1 = easy,  2 = medium,  3 = latvietis =], 4 = nekad neuzminēsi līmenis, 5 = highscore, 6 = iziet!!!:')
             start_time = time.time()
 
 

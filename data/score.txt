@@ -1,2 +1,7 @@
 olegs | Speles laiks 38 | Speles limenis easy
 olegs | Speles laiks 20 | Speles limenis easy
+olegs | Speles laiks 28 | Speles limenis API
+olegs | Speles laiks 0 | Speles limenis API
+olegs | Speles laiks 42 | Speles limenis API
+olegs | Speles laiks 27 | Speles limenis API
+olegs | Speles laiks 0 | Speles limenis API
