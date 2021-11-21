@@ -6,6 +6,7 @@ from scripts_test.split_difficulity import *
 import random
 import time
 import shelve
+import requests
 
 
 #Uzzīmējam spēles logo.
@@ -28,7 +29,7 @@ nick = input('IEVADI SAVU IESAUKU:')
 while True:
     try:
         while (visi_vardi):
-            difficulty = input('Izvēlies spēles līmeni, 1 = easy,  2 = medium,  3 = latvietis =], 4 = highscore, 5 = iziet!!!:')
+            difficulty = input('Izvēlies spēles līmeni, 1 = easy,  2 = medium,  3 = latvietis =], 4="nekad neuzminēsi līmenis", 5 = highscore, 6 = iziet!!!:')
             start_time = time.time()
 
 
@@ -61,7 +62,7 @@ while True:
             
             #HIGHSCORE izvēle.
             
-            elif difficulty == '4':
+            elif difficulty == '5':
                 print ("HIGHSCORES")
                 print('===========')
                 with open('data\score.txt', 'r', encoding='utf-8') as file_read:
@@ -69,10 +70,23 @@ while True:
                     print(contents)  
                     break
             
+
+            #API grūtības pakāpe
             
+            elif difficulty == '4':
+                
+                print ("Vārda izvēle no randomword api")
+                url = 'https://random-word-api.herokuapp.com/word?number=1'
+                response = requests.get(url)
+                difftxt = 'API'
+                fix_api_word = (str(response.json())[2:-2])
+                game.play(fix_api_word)
+                #break
+
+
             #Aizver spēli ar atvadu paziņojumu.
-            
-            elif difficulty == '5':
+
+            elif difficulty == '6':
                 print ("Tiksimies nākamreiz!")
                 break
             
