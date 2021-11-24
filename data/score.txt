@@ -5,3 +5,5 @@ olegs | Speles laiks 0 | Speles limenis API
 olegs | Speles laiks 42 | Speles limenis API
 olegs | Speles laiks 27 | Speles limenis API
 olegs | Speles laiks 0 | Speles limenis API
+12 | Speles laiks 28 | Speles limenis API
+test1 | Speles laiks 15 | Speles limenis latvietis

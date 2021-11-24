@@ -26,10 +26,11 @@ nick = input('IEVADI SAVU IESAUKU:')
 
 #While cikls kur lietotajs izvēlas grūtības pakapi, spēles rezultātus vai vēlas beigt spēli.
 
+
 while True:
     try:
         while (visi_vardi):
-            difficulty = input('Izvēlies spēles līmeni, 1 = easy,  2 = medium,  3 = latvietis =], 4 = nekad neuzminēsi līmenis, 5 = highscore, 6 = iziet!!!:')
+            difficulty = input('\033[0;32;40mIzvēlies spēles līmeni:\033[0;37;40m \n1 = Easy  \n2 = Medium  \n3 = Latvietis =] \n4 = Angļu vārdi no API \n5 = Highscore \n6 = Quit\n')
             start_time = time.time()
 
 

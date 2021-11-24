@@ -20,7 +20,7 @@
     1: easy grūtības pakāpe,
     2: medium grūtības pakāpe,
     3: latvietis grūtības pakāpe,
-    4: vārds no randowm words API
+    4: vārds no random words API
     5. aplūkot HIGHSCORES,
     6: iziet no spēles.
 
