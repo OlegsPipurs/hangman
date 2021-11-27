@@ -30,7 +30,14 @@ nick = input('IEVADI SAVU IESAUKU:')
 while True:
     try:
         while (visi_vardi):
-            difficulty = input('\033[0;32;40mIzvēlies spēles līmeni:\033[0;37;40m \n1 = Easy  \n2 = Medium  \n3 = Latvietis =] \n4 = Angļu vārdi no API \n5 = Highscore \n6 = Quit\n')
+            difficulty = input('\033[0;32;40mIzvēlies spēles līmeni: ' 
+            + '\033[0;37;40m \n1 = Easy ' 
+            + '\n2 = Medium ' 
+            + '\n3 = Latvietis =] ' 
+            + '\n4 = Angļu vārdi no API ' 
+            + '\n5 = Highscore ' 
+            + '\n6 = Quit \n'
+            )
             start_time = time.time()
 
 
@@ -38,7 +45,7 @@ while True:
 
             if difficulty == '1':
                 difftxt = 'easy'                                                                                         
-                print('Tu izvēlējies pirmo spēles limeni "easy"')
+                print('Tu izvēlējies pirmo spēles limeni "Easy"')
                 random.shuffle(importetais_vards_easy)
                 game.play(importetais_vards_easy_lv_fix.pop())
             
@@ -47,7 +54,7 @@ while True:
             
             elif difficulty == '2':
                 difftxt = 'medium' 
-                print('Tu izvēlējies otro spēles limeni "medium"')  
+                print('Tu izvēlējies otro spēles limeni "Medium"')  
                 random.shuffle(importetais_vards_medium)                                                                   
                 game.play(importetais_vards_medium_lv_fix.pop())                                                           
             
@@ -56,39 +63,37 @@ while True:
             
             elif difficulty == '3':
                 difftxt = 'latvietis'
-                print('Tu izvēlējies trešo spēles limeni "latvietis =]"')  
+                print('Tu izvēlējies trešo spēles limeni "Latvietis =]"')  
                 random.shuffle(importetais_vards_hard)
                 game.play(importetais_vards_hard_lv_fix.pop())
                 
-            
-            #HIGHSCORE izvēle.
-            
-            elif difficulty == '5':
-                print ("HIGHSCORES")
-                print('===========')
-                with open('data\score.txt', 'r', encoding='utf-8') as file_read:
-                    contents = file_read.read()
-                    print(contents)  
-                    break
-            
-
             #API grūtības pakāpe
             
             elif difficulty == '4':
                 
-                print ("Vārda izvēle no randomword api")
+                print("Vārda izvēle no randomword api")
                 url = 'https://random-word-api.herokuapp.com/word?number=1'
                 response = requests.get(url)
                 difftxt = 'API'
                 fix_api_word = (str(response.json())[2:-2])
-                game.play(fix_api_word)
-                #break
-
-
+                game.play(fix_api_word)      
+            
+            
+            #HIGHSCORE izvēle.
+            
+            elif difficulty == '5':
+                print("HIGHSCORES")
+                print(' =========== ')
+                with open('data\score.txt', 'r', encoding='utf-8') as file_read:
+                    contents = file_read.read()
+                    print(contents)  
+                    break
+    
+    
             #Aizver spēli ar atvadu paziņojumu.
 
             elif difficulty == '6':
-                print ("Tiksimies nākamreiz!")
+                print("Tiksimies nākamreiz!")
                 break
             
             
@@ -105,7 +110,14 @@ while True:
             x = str(speles_laiks)
             print("Spele beigusies, laiks ir" , speles_laiks , 'sekundes')
             with open('data\score.txt', 'a') as file:
-                file.write(nick + ' | ' + "Speles laiks " + (str(speles_laiks)) + ' | ' + "Speles limenis " + difftxt + '\n')
+                file.write(nick 
+                + ' | ' 
+                + "Speles laiks " 
+                + (str(speles_laiks)) 
+                + ' | ' 
+                + "Speles limenis " 
+                + difftxt + '\n'
+                )
     
     
     #Dažādu kļūdu apstrāde.
