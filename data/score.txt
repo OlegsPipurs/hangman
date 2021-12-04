@@ -10,3 +10,8 @@ test1 | Speles laiks 15 | Speles limenis latvietis
 test12 | Speles laiks 68 | Speles limenis easy
 test13 | Speles laiks 19 | Speles limenis medium
 tesqada | Speles laiks 22 | Speles limenis medium
+olegs | Speles laiks 8 | Speles limenis API
+1 | Speles laiks 18 | Speles limenis easy
+1 | Speles laiks 24 | Speles limenis medium
+1 | Speles laiks 28 | Speles limenis medium
+1 | Speles laiks 31 | Speles limenis easy

@@ -19,8 +19,7 @@ class game:
         + '\nSpēle karātavas. Minamais vārds ir ' 
         + str(len(minamais_vards)) 
         + ' simboli garš. Tev ir sešas dzīvības.\n' 
-        + 73* '='
-        )
+        + 73* '=')
 
 
         #Dzīvibu salidzinajums, ievaditā burta pārbaude
@@ -32,8 +31,7 @@ class game:
                 # https://ozzmaker.com/add-colour-to-text-in-python/
                 print(
                     '\033[0;31;40mIevadīji nekorektu simbolu' 
-                    + '\033[0;37;40m'
-                    )
+                    + '\033[0;37;40m')
 
 
             #Ievadīto burtu pārbaude, tiek pievienots pie minētajiem burtiem un to izvadi 
@@ -44,35 +42,37 @@ class game:
                 print(neuzminetie_burti)
 
 
-                #Pārbaude vai atklātais vārds sakrit ar minamo vārdu un izvada spēles paziņojumu
+                #Pārbaude vai atklātais vārds sakrit ar minamo vārdu un 
+                # izvada spēles paziņojumu
 
                 if ''.join(burts if burts in uzminetie_burti else '-' for burts in minamais_vards) == minamais_vards:
                     win = 1
                     print(
                     '\033[0;32;40mTu atminēji vārdu! Vārds bija: ',
                     minamais_vards 
-                    + '\033[0;37;40m'
-                    )
+                    + '\033[0;37;40m')
                     break
 
 
-            #Tiek veikta parbaude ievadita simbolu garums ir vienads ar minamo varda garumu
+            #Tiek veikta parbaude ievadita simbolu garums ir vienads ar 
+            # minamo varda garumu
 
             elif len(burts) > 1 and len(burts) != len(minamais_vards):               
                 
 
-                #Bonus - Ievadot slepeno vārdu, atklāj katru otro burtu minamajā vārdā
+                #Bonus - Ievadot slepeno vārdu, atklāj katru otro burtu 
+                # minamajā vārdā
 
                 if burts == 'FITA':
                     print('  '.join(minamais_vards[::2].upper()))
                 else:
                     print(
                     '\033[0;31;40mNepareizs vārda garums, mini vēlreiz' 
-                        + '\033[0;37;40m'
-                        )
+                        + '\033[0;37;40m')
 
 
-            #Minamā vārda pārbaude, vai sakrīt ar menēto vārdu, ja nesakrit atņem dzīvību  
+            #Minamā vārda pārbaude, vai sakrīt ar menēto vārdu
+            #ja nesakrit atņem dzīvību  
                    
             elif len(burts) > 1 and len(burts) == len(minamais_vards) and burts != minamais_vards:
                 neuzminetie_vardi.add(burts)
@@ -85,7 +85,8 @@ class game:
                 print('Atlikušās dzīvības: ' + dzivibas * "\u2764\uFE0F")
             
 
-            #Ja ievadītais burts sakrīt ar minamo vārdu iestata mainīgo win un dzīvības
+            #Ja ievadītais burts sakrīt ar minamo vārdu iestata mainīgo win 
+            # un dzīvības
 
             elif burts == minamais_vards:
                 win = 1
@@ -102,12 +103,11 @@ class game:
                 print('\033[0;31;40mMinētais', 
                 burts, 
                 'nav šajā vārdā' 
-                + '\033[0;37;40m'
-                )
+                + '\033[0;37;40m')
+
                 dzivibas -= 1
                 print('Atlikušās dzīvības: ' 
-                + dzivibas * "\u2764\uFE0F"
-                )
+                + dzivibas * "\u2764\uFE0F")
             
             print('Atminētie burti: ', 
             ''.join(burts if burts in uzminetie_burti else '-' for burts in minamais_vards) 
