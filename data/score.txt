@@ -15,3 +15,8 @@ olegs | Speles laiks 8 | Speles limenis API
 1 | Speles laiks 24 | Speles limenis medium
 1 | Speles laiks 28 | Speles limenis medium
 1 | Speles laiks 31 | Speles limenis easy
+kij | Speles laiks 13 | Speles limenis medium
+kij | Speles laiks 40 | Speles limenis medium
+kij | Speles laiks 9 | Speles limenis easy
+kij | Speles laiks 7 | Speles limenis easy
+kij | Speles laiks 115 | Speles limenis latvietis
