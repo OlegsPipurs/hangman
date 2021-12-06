@@ -144,4 +144,3 @@ while True:
         print('Iztrukst fails words.txt')
         input('Nospied ENTER pogu lai izietu...')
     break
-

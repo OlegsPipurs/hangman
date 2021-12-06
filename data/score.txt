@@ -20,3 +20,6 @@ kij | Speles laiks 40 | Speles limenis medium
 kij | Speles laiks 9 | Speles limenis easy
 kij | Speles laiks 7 | Speles limenis easy
 kij | Speles laiks 115 | Speles limenis latvietis
+123123 | Speles laiks 12 | Speles limenis easy
+123123 | Speles laiks 9 | Speles limenis medium
+123123 | Speles laiks 26 | Speles limenis API
